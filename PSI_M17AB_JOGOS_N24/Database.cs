@@ -55,6 +55,7 @@ namespace PSI_M17AB_JOGOS_N24
             cmd.Dispose();
             return reg;
         }
+
         public DataTable returnQResult(string sql, List<SqlParameter> parameters)
         {
             SqlCommand cmd = new SqlCommand(sql, con);
@@ -95,6 +96,7 @@ namespace PSI_M17AB_JOGOS_N24
             }
             return true;
         }
+
         public bool executeQ(string sql, List<SqlParameter> parameters)
         {
             try
@@ -111,6 +113,7 @@ namespace PSI_M17AB_JOGOS_N24
             }
             return true;
         }
+
         public bool executeQ(string sql, List<SqlParameter> parameters, SqlTransaction transaction)
         {
             try
@@ -127,6 +130,69 @@ namespace PSI_M17AB_JOGOS_N24
                 return false;
             }
             return true;
+        }
+
+        public bool add_product(string name, string description, decimal price)
+        {
+            var q = "insert into products(product_name, product_description, price) values(@name, @description, @price)";
+            List<SqlParameter> args = new List<SqlParameter>
+            {
+                new SqlParameter("@name", name),
+                new SqlParameter("@description", description),
+                new SqlParameter("@price", price),
+            };
+
+            return executeQ(q, args);
+        }
+
+        public DataTable get_products()
+        {
+            var q = "select * from products";
+            return returnQResult(q);
+        }
+
+        public DataTable get_product_with_id(int id)
+        {
+            var q = "select * from products where id like @id";
+
+            List<SqlParameter> args = new List<SqlParameter>
+            {
+                new SqlParameter("@id", id),
+            };
+
+            return returnQResult(q, args);
+        }
+
+        public bool add_user(string username, string pass, string email, int tipo)
+        {
+            var q = "insert into users(username, pass, email, tipo) values(@username, HASHBYTES('SHA2_512',@password), @email, @tipo)";
+
+            List<SqlParameter> args = new List<SqlParameter>
+            {
+                new SqlParameter("@username", username),
+                new SqlParameter("@password", pass),
+                new SqlParameter("@email", email),
+                new SqlParameter("@tipo", tipo),
+            };
+
+            return executeQ(q, args);
+        }
+
+        public bool check_user_login(string username, string pass)
+        {
+            var q = "select * from users where username like @username and pass like HASHBYTES('SHA2_512',@password)";
+
+            List<SqlParameter> args = new List<SqlParameter>
+            {
+                new SqlParameter("@username", username),
+                new SqlParameter("@password", pass),
+            };
+
+            var res = returnQResult(q, args);
+
+            if (res.Rows.Count > 0)
+                return true;
+            return false;
         }
     }
 }
