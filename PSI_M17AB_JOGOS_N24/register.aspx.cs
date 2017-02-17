@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace PSI_M17AB_JOGOS_N24
 {
-    public partial class produto : System.Web.UI.Page
+    public partial class register : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

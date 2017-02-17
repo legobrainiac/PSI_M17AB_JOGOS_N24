@@ -11,7 +11,7 @@ namespace PSI_M17AB_JOGOS_N24
 {
 
 
-    public partial class produto
+    public partial class register
     {
     }
 }

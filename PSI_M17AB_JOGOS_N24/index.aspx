@@ -5,10 +5,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <main class="mdl-layout__content mdl-color--grey-100">
-        <div class="mdl-grid demo-content" id="divCardsGames" runat="server">
-            
-            
-            
+        <div class="mdl-grid demo-content mdl-color--blue-grey-900" id="divCardsGames" runat="server">
         </div>
     </main>
 </asp:Content>
