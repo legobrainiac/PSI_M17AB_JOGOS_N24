@@ -178,7 +178,8 @@ namespace PSI_M17AB_JOGOS_N24
             return executeQ(q, args);
         }
 
-        public bool check_user_login(string username, string pass)
+        public bool check_user_login(string username, string pass, out DataTable
+            user)
         {
             var q = "select * from users where username like @username and pass like HASHBYTES('SHA2_512',@password)";
 
@@ -189,6 +190,7 @@ namespace PSI_M17AB_JOGOS_N24
             };
 
             var res = returnQResult(q, args);
+            user = res;
 
             if (res.Rows.Count > 0)
                 return true;

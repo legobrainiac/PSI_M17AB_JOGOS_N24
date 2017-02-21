@@ -7,10 +7,12 @@ using System.Web.UI.WebControls;
 
 namespace PSI_M17AB_JOGOS_N24
 {
-    public partial class master : System.Web.UI.MasterPage
+    public partial class account : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["id"] == null)
+                Response.Redirect("register.aspx");
         }
     }
 }
