@@ -77,11 +77,7 @@
                 </div>
             </header>
             <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
-                <header class="demo-drawer-header">
-                    <asp:Image ID="picProfile" ImageUrl="~/pics/Steven_Hallam-slide.jpg" CssClass="demo-avatar" Width="100" runat="server"></asp:Image>
-                    <div>
-                    </div>
-                </header>
+                <asp:Label id="username" runat="server" /> 
                 <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
                     <div id="loggediIn" runat="server">
                         <a class="mdl-navigation__link mdl-color-text--white" href="account.aspx"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i>Account</a>

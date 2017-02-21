@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace PSI_M17AB_JOGOS_N24
 {
@@ -11,6 +6,13 @@ namespace PSI_M17AB_JOGOS_N24
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                if (Session["id"] == null)
+                    username.Text = "Unknown";
+                else
+                    username.Text = Session["username"].ToString();
+            }
         }
     }
 }
