@@ -77,13 +77,24 @@
                 </div>
             </header>
             <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
-                <asp:Label id="username" runat="server" /> 
+                <h3>
+                    &nbsp<asp:Label ID="username" runat="server" />
+                </h3>
                 <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+
                     <div id="loggediIn" runat="server">
                         <a class="mdl-navigation__link mdl-color-text--white" href="account.aspx"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">account_box</i>Account</a>
 
                         <a class="mdl-navigation__link mdl-color-text--white" href="cart.aspx"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">shopping_cart</i>Cart</a>
                     </div>
+
+                    <div id="divAdmin" runat="server">
+                        <a class="mdl-navigation__link mdl-color-text--white" href="add_product.aspx"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">add_circle</i>Add product</a>
+                        <a class="mdl-navigation__link mdl-color-text--white" href="manage_users.aspx"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">supervisor_account</i>Manage users</a>
+                        <a class="mdl-navigation__link mdl-color-text--white" href="manage_products.aspx"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">videogame_asset</i>Manage products</a>
+                        <a class="mdl-navigation__link mdl-color-text--white" href="statistics.aspx"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">graphic_eq</i>Statistics</a>
+                    </div>
+
                     <div>
                         <a class="mdl-navigation__link mdl-color-text--white" href="index.aspx"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
                         <a class="mdl-navigation__link mdl-color-text--white" href="search.aspx"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">search</i>Search</a>

@@ -65,6 +65,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="account.aspx" />
+    <Content Include="add_product.aspx" />
+    <Content Include="cart.aspx" />
+    <Content Include="manage_products.aspx" />
+    <Content Include="manage_users.aspx" />
     <Content Include="packages.config" />
     <Content Include="master.Master" />
     <None Include="Web.Debug.config">
@@ -82,6 +86,8 @@
     <Content Include="pics\4.jpg" />
     <Content Include="product.aspx" />
     <Content Include="register.aspx" />
+    <Content Include="search.aspx" />
+    <Content Include="statistics.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -92,6 +98,20 @@
     <Compile Include="account.aspx.designer.cs">
       <DependentUpon>account.aspx</DependentUpon>
     </Compile>
+    <Compile Include="add_product.aspx.cs">
+      <DependentUpon>add_product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="add_product.aspx.designer.cs">
+      <DependentUpon>add_product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cart.aspx.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cart.aspx.designer.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Database.cs" />
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
@@ -99,6 +119,20 @@
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manage_products.aspx.cs">
+      <DependentUpon>manage_products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manage_products.aspx.designer.cs">
+      <DependentUpon>manage_products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manage_users.aspx.cs">
+      <DependentUpon>manage_users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manage_users.aspx.designer.cs">
+      <DependentUpon>manage_users.aspx</DependentUpon>
     </Compile>
     <Compile Include="master.Master.cs">
       <DependentUpon>master.Master</DependentUpon>
@@ -121,6 +155,20 @@
     </Compile>
     <Compile Include="register.aspx.designer.cs">
       <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="search.aspx.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="search.aspx.designer.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="statistics.aspx.cs">
+      <DependentUpon>statistics.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="statistics.aspx.designer.cs">
+      <DependentUpon>statistics.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

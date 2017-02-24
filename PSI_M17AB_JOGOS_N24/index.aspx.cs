@@ -30,7 +30,7 @@ namespace PSI_M17AB_JOGOS_N24
                     "<div class='mdl-card__media'>" +
                         "<img src='/pics/" + id + ".jpg' Width='400' Height='225'>" +
                     "</div>" +
-                "</div>";
+                "</div>&nbsp&nbsp&nbsp";
 
             return card;
         }

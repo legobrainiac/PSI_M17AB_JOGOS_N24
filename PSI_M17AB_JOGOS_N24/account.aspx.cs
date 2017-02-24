@@ -13,6 +13,17 @@ namespace PSI_M17AB_JOGOS_N24
         {
             if (Session["id"] == null)
                 Response.Redirect("register.aspx");
+
+            if (Session["profile"].ToString() == "1")
+            {
+                divUser.Visible = false;
+                divAdmin.Visible = true;
+            }
+            else
+            {
+                divUser.Visible = true;
+                divAdmin.Visible = false;
+            }
         }
     }
 }

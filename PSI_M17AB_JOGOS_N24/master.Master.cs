@@ -8,10 +8,19 @@ namespace PSI_M17AB_JOGOS_N24
         {
             if (!IsPostBack)
             {
-                if (Session["id"] == null)
-                    username.Text = "Unknown";
-                else
-                    username.Text = Session["username"].ToString();
+             
+            }
+
+            if (Session["id"] == null)
+            {
+                username.Text = "Guest";
+                divAdmin.Visible = false;
+            }
+            else
+            {
+                username.Text = Session["username"].ToString();
+                if (Session["profile"].ToString() == "0")
+                    divAdmin.Visible = false;
             }
         }
     }

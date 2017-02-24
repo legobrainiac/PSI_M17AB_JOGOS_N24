@@ -1,7 +1,7 @@
 ﻿create table users (
 	id int identity not null,
 	username varchar(50) not null,
-	pass varchar(50) not null,
+	pass varchar(150) not null,
 	email varchar(150) not null,
 	tipo int default 1,
 );
