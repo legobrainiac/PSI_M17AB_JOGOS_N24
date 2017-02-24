@@ -13,7 +13,7 @@ namespace PSI_M17AB_JOGOS_N24
 
             if (Session["id"] == null)
             {
-                username.Text = "Guest";
+                username.Text = "( ͡° ͜ʖ ͡°)";
                 divAdmin.Visible = false;
             }
             else

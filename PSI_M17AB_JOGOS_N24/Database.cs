@@ -132,9 +132,9 @@ namespace PSI_M17AB_JOGOS_N24
             return true;
         }
 
-        public bool add_product(string name, string description, decimal price)
+        public int add_product(string name, string description, decimal price)
         {
-            var q = "insert into products(product_name, product_description, price) values(@name, @description, @price)";
+            var q = "insert into products(product_name, product_description, price) values(@name, @description, @price);SELECT CAST(SCOPE_IDENTITY() AS INT);";
             List<SqlParameter> args = new List<SqlParameter>
             {
                 new SqlParameter("@name", name),
@@ -142,7 +142,11 @@ namespace PSI_M17AB_JOGOS_N24
                 new SqlParameter("@price", price),
             };
 
-            return executeQ(q, args);
+            SqlCommand cmd = new SqlCommand(q, con);
+            cmd.Parameters.AddRange(args.ToArray());
+            cmd.Dispose();
+
+            return (int)cmd.ExecuteScalar();
         }
 
         public DataTable get_products()
