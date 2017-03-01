@@ -67,7 +67,6 @@
     <Content Include="account.aspx" />
     <Content Include="add_product.aspx" />
     <Content Include="cart.aspx" />
-    <Content Include="manage_products.aspx" />
     <Content Include="manage_users.aspx" />
     <Content Include="packages.config" />
     <Content Include="master.Master" />
@@ -119,13 +118,6 @@
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="manage_products.aspx.cs">
-      <DependentUpon>manage_products.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="manage_products.aspx.designer.cs">
-      <DependentUpon>manage_products.aspx</DependentUpon>
     </Compile>
     <Compile Include="manage_users.aspx.cs">
       <DependentUpon>manage_users.aspx</DependentUpon>

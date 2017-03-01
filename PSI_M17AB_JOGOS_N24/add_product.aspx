@@ -22,6 +22,6 @@
     <div class="mdl-cell mdl-cell--12-col" align="center">
         <asp:Button ID="btnAdd" CssClass="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--raised mdl-button--colored" Text="Add" runat="server" OnClick="btnAdd_Click" />
     </div>
-    <asp:Label id="lblError" runat="server"></asp:Label>
+    <asp:Label ID="lblError" runat="server"></asp:Label>
 
 </asp:Content>

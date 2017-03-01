@@ -21,7 +21,7 @@ namespace PSI_M17AB_JOGOS_N24
         private string BuildGameCard(string name, int id)
         {
             string card =
-                "<div class='demo-updates mdl-card mdl-shadow--2dp mdl-cell--4-col mdl-cell--4-col-phone mdl-color--blue-grey-800'>" +
+                "<div class='demo-updates mdl-card mdl-shadow--2dp mdl-cell--3-col mdl-cell--4-col-phone mdl-color--blue-grey-800'>" +
                     "<div class='mdl-card__title'>" +
                         "<a href='product.aspx?id=" + id + "'>" +
                             "<h2 class='mdl-card__title-text'>" + name + "</h2>" +

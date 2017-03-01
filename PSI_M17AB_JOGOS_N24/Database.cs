@@ -155,9 +155,38 @@ namespace PSI_M17AB_JOGOS_N24
             return returnQResult(q);
         }
 
+        public void delete_product(int id)
+        {
+            var q = "delete from products where id = @id";
+
+            List<SqlParameter> args = new List<SqlParameter>
+            {
+                new SqlParameter("@id", id),
+            };
+
+            //TODO(legobrainiac): delete image too, ez but i dont feel like doing it now eksdee
+            executeQ(q, args);
+        }
+
+        public bool edit_product(int id, string name, string description, int price)
+        {
+            var q = "update products set product_name = @name, product_description = @description, price = @price where id = @id";
+
+            List<SqlParameter> args = new List<SqlParameter>
+            {
+                new SqlParameter("@id", id),
+                new SqlParameter("@name", name),
+                new SqlParameter("@description", description),
+                new SqlParameter("@price", price)
+            };
+
+            //TODO(legobrainiac): Edit image, ez but i dont feel like doing it now eksdee
+            return executeQ(q, args);
+        }
+
         public DataTable get_users()
         {
-            var q = "select * from users";
+            var q = "select username, email, tipo from users";
             return returnQResult(q);
         }
 

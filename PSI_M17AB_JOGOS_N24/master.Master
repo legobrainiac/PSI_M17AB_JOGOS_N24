@@ -91,7 +91,6 @@
                     <div id="divAdmin" runat="server">
                         <a class="mdl-navigation__link mdl-color-text--white" href="add_product.aspx"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">add_circle</i>Add product</a>
                         <a class="mdl-navigation__link mdl-color-text--white" href="manage_users.aspx"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">supervisor_account</i>Manage users</a>
-                        <a class="mdl-navigation__link mdl-color-text--white" href="manage_products.aspx"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">videogame_asset</i>Manage products</a>
                         <a class="mdl-navigation__link mdl-color-text--white" href="statistics.aspx"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">graphic_eq</i>Statistics</a>
                     </div>
 
