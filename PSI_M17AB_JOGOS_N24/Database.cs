@@ -155,6 +155,12 @@ namespace PSI_M17AB_JOGOS_N24
             return returnQResult(q);
         }
 
+        public DataTable get_users()
+        {
+            var q = "select * from users";
+            return returnQResult(q);
+        }
+
         public DataTable get_product_with_id(int id)
         {
             var q = "select * from products where id like @id";

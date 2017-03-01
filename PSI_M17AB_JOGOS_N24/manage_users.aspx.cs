@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace PSI_M17AB_JOGOS_N24
 {
@@ -11,7 +6,15 @@ namespace PSI_M17AB_JOGOS_N24
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(Session["id"] == null || Session["profile"].ToString() == "0")
+                Response.Redirect("index.aspx");
 
+            if(!IsPostBack)
+            {
+                gvUsers.Columns.Clear();
+                gvUsers.DataSource = Database.Instance.get_users();
+                gvUsers.DataBind();
+            }
         }
     }
 }
