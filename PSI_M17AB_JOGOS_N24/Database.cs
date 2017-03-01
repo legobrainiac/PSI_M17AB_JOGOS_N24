@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using Newtonsoft.Json;
 
 namespace PSI_M17AB_JOGOS_N24
 {
