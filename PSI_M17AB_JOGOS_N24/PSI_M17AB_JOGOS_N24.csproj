@@ -87,7 +87,6 @@
     <Content Include="product.aspx" />
     <Content Include="register.aspx" />
     <Content Include="search.aspx" />
-    <Content Include="statistics.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -155,13 +154,6 @@
     </Compile>
     <Compile Include="search.aspx.designer.cs">
       <DependentUpon>search.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="statistics.aspx.cs">
-      <DependentUpon>statistics.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="statistics.aspx.designer.cs">
-      <DependentUpon>statistics.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

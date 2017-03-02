@@ -7,14 +7,11 @@ namespace PSI_M17AB_JOGOS_N24
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (!IsPostBack) //TODO(legobrainiac): update sql script to include primary in reviews table
             {
                 DataTable data = Database.Instance.get_products();
-
                 foreach (DataRow row in data.Rows)
-                {
                     divCardsGames.InnerHtml += BuildGameCard(row[1].ToString(), int.Parse(row[0].ToString()));
-                }
             }
         }
 

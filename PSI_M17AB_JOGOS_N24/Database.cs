@@ -185,6 +185,45 @@ namespace PSI_M17AB_JOGOS_N24
             return executeQ(q, args);
         }
 
+        public bool review_product(int id_user, int id_product, string title, string body)
+        {
+            var q = "insert into products_reviews(id_user, id_product, title, body) values(@id_user, @id_product, @title, @body)";
+
+            List<SqlParameter> args = new List<SqlParameter>
+            {
+                new SqlParameter("@id_user", id_user),
+                new SqlParameter("@id_product", id_product),
+                new SqlParameter("@title", title),
+                new SqlParameter("@body", body)
+            };
+
+            return executeQ(q, args);
+        }
+
+        public DataTable reviews_product(int id)
+        {
+            var q = "select * from products_reviews where id_product like @id";
+
+            List<SqlParameter> args = new List<SqlParameter>
+            {
+                new SqlParameter("@id", id),
+            };
+
+            return returnQResult(q, args);
+        }
+
+        public DataTable reviews_user(int id)
+        {
+            var q = "select * from products_reviews where id_user like @id";
+
+            List<SqlParameter> args = new List<SqlParameter>
+            {
+                new SqlParameter("@id", id),
+            };
+
+            return returnQResult(q, args);
+        }
+
         public DataTable get_users()
         {
             var q = "select username, email, tipo from users";

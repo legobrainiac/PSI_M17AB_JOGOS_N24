@@ -38,6 +38,23 @@
                 </h4>
             </div>
         </div>
+
+        <div class="mdl-card mdl-card mdl-cell--6-col mdl-color--blue-grey-600 mdl-color-text--white">
+            <h4>Title</h4>
+            <asp:TextBox ID="tbTitle" CssClass="mdl-textfield__input mdl-color-text--white" runat="server"></asp:TextBox>
+            <h6>Body</h6>
+            <asp:TextBox ID="tbBody" CssClass="mdl-textfield__input mdl-color-text--white" runat="server"></asp:TextBox>
+
+            <div class="mdl-cell--12-col" align="center">
+                <asp:Button ID="btnReview" CssClass="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--raised mdl-button--colored" Text="Review" runat="server" OnClick="btnReview_Click" />
+            </div>
+
+
+        </div>
+
+        <div id="divReviews" runat="server">
+        </div>
+
         <div id="divAdmin" runat="server">
             <div class="mdl-cell mdl-cell--12-col send-button">
                 <asp:Button ID="btnDel" CssClass="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--raised mdl-button--colored" Text="Delete" runat="server" OnClick="btnDel_Click" />

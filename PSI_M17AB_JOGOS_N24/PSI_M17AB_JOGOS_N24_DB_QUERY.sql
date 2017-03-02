@@ -16,6 +16,7 @@ create table products (
 create table products_reviews (
 	id int identity not null,
 	id_user int foreign key references users(id),
+	id_product int foreign key references products(id),
 	title varchar(100) not null,
 	body varchar(8000) not null,
 );
