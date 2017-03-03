@@ -156,6 +156,30 @@ namespace PSI_M17AB_JOGOS_N24
             return returnQResult(q);
         }
 
+        public DataTable get_products_like(string name)
+        {
+            var q = "select * from products where product_name like @name";
+
+            List<SqlParameter> args = new List<SqlParameter>
+            {
+                new SqlParameter("@name", "%" + name + "%"),
+            };
+
+            return returnQResult(q, args);
+        }
+
+        public DataTable get_products_user(int id)
+        {
+            var q = "select * from products inner join users_products on id_product = products.id and id_user = @id";
+
+            List<SqlParameter> args = new List<SqlParameter>
+            {
+                new SqlParameter("@id", id),
+            };
+
+            return returnQResult(q, args);
+        }
+
         public void delete_product(int id)
         {
             var q = "delete from products where id = @id";
@@ -222,6 +246,59 @@ namespace PSI_M17AB_JOGOS_N24
             };
 
             return returnQResult(q, args);
+        }
+
+        public void buy(int id_user, int id_game)
+        {
+            var q = "insert into users_products(id_user, id_product) values(@id_user, @id_product)";
+
+            List<SqlParameter> args = new List<SqlParameter>
+            {
+                new SqlParameter("@id_user", id_user),
+                new SqlParameter("@id_product", id_game),
+            };
+
+            executeQ(q, args);
+        }
+
+        public void save_purchase(int id_user, string json)
+        {
+            var q = "insert into users_purchase(id_user, purchase_json) values(@id_user, @json)";
+
+            List<SqlParameter> args = new List<SqlParameter>
+            {
+                new SqlParameter("@id_user", id_user),
+                new SqlParameter("@json", json),
+            };
+
+            executeQ(q, args);
+        }
+
+        public bool has_game(int id_user, int id_game)
+        {
+            var q = "select * from users_products where id_user = @id_user and id_product = @id";
+
+            List<SqlParameter> args = new List<SqlParameter>
+            {
+                new SqlParameter("@id_user", id_user),
+                new SqlParameter("@id", id_game),
+            };
+
+            DataTable res = returnQResult(q, args);
+
+            if (res.Rows.Count > 0) return true;
+
+            return false;
+
+        }
+
+        public void ProcessCart(List<int> cart, int id_user)
+        {
+            foreach (int id in cart)
+            {
+                buy(id_user, id);
+            }
+            save_purchase(id_user, JsonConvert.SerializeObject(cart, Formatting.None));
         }
 
         public DataTable get_users()

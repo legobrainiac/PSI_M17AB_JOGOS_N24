@@ -23,5 +23,10 @@ namespace PSI_M17AB_JOGOS_N24
                     divAdmin.Visible = false;
             }
         }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

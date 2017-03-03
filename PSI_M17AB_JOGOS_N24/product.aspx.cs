@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Data;
+using System.Web;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace PSI_M17AB_JOGOS_N24
 {
@@ -120,6 +123,43 @@ namespace PSI_M17AB_JOGOS_N24
             catch (Exception ex)
             {
                 lblError.Text = ex.Message;
+            }
+        }
+
+        protected void btnBuy_Click(object sender, EventArgs e)
+        {
+            HttpCookie cookie;
+            string content;
+            List<int> list;
+
+
+
+            if (Session["id"] == null) Response.Redirect("register.aspx");
+
+            int id_product = int.Parse(Request["id"]);
+            int id_user = int.Parse(Session["id"].ToString());
+
+            if (Database.Instance.has_game(id_user, id_product))
+            {
+                divErro.Visible = true;
+                return;
+            }
+
+            cookie = Request.Cookies["cart"] as HttpCookie;
+            if (cookie != null)
+            {
+                content = cookie.Value;
+                list = JsonConvert.DeserializeObject<List<int>>(content);
+                list.Add(id_product);
+                cookie.Value = JsonConvert.SerializeObject(list);
+                Response.Cookies.Set(cookie);
+            }
+            else
+            {
+                list = new List<int> { id_product };
+                cookie = new HttpCookie("cart", JsonConvert.SerializeObject(list));
+                cookie.Expires = DateTime.Now.AddDays(1);
+                Response.Cookies.Add(cookie);
             }
         }
     }

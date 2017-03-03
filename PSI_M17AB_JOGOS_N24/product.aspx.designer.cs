@@ -49,6 +49,33 @@ namespace PSI_M17AB_JOGOS_N24 {
         protected global::System.Web.UI.WebControls.Label lblDescription;
         
         /// <summary>
+        /// btnBuy control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBuy;
+        
+        /// <summary>
+        /// divErro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divErro;
+        
+        /// <summary>
+        /// lblErro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblErro;
+        
+        /// <summary>
         /// tbTitle control.
         /// </summary>
         /// <remarks>

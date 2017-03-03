@@ -3,9 +3,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="divUser" runat="server">
-        user
+        
     </div>
 
+    <h1>My Games:</h1>
+        <div id="divGames" class="mdl-grid demo-content mdl-color--blue-grey-900" runat="server"></div>
     <div id="divAdmin" runat="server">
         admin
     </div>

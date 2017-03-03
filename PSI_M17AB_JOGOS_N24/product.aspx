@@ -14,6 +14,7 @@
         }
     </style>
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="mdl-layout mdl-js-layout">
         <div class="demo-card-image mdl-card mdl-shadow--2dp mdl-card">
@@ -39,18 +40,25 @@
             </div>
         </div>
 
+        <div class="mdl-cell--12-col" align="center">
+            <asp:Button ID="btnBuy" CssClass="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--raised mdl-button--colored" Text="Add To card" runat="server" OnClick="btnBuy_Click" />
+        </div>
+        <div id="divErro" runat="server" visible="false">
+            <span class="mdl-chip">
+                <span class="mdl-chip__text"><asp:Label ID="lblErro" runat="server" Text="You already own this game!"></asp:Label></span>
+            </span>
+        </div>
         <div class="mdl-card mdl-card mdl-cell--6-col mdl-color--blue-grey-600 mdl-color-text--white">
             <h4>Title</h4>
             <asp:TextBox ID="tbTitle" CssClass="mdl-textfield__input mdl-color-text--white" runat="server"></asp:TextBox>
             <h6>Body</h6>
             <asp:TextBox ID="tbBody" CssClass="mdl-textfield__input mdl-color-text--white" runat="server"></asp:TextBox>
 
-            <div class="mdl-cell--12-col" align="center">
-                <asp:Button ID="btnReview" CssClass="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--raised mdl-button--colored" Text="Review" runat="server" OnClick="btnReview_Click" />
-            </div>
-
-
         </div>
+        <div class="mdl-cell--12-col" align="center">
+            <asp:Button ID="btnReview" CssClass="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--raised mdl-button--colored" Text="Review" runat="server" OnClick="btnReview_Click" />
+        </div>
+
 
         <div id="divReviews" runat="server">
         </div>

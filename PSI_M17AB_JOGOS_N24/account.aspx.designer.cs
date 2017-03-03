@@ -22,6 +22,15 @@ namespace PSI_M17AB_JOGOS_N24 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divUser;
         
         /// <summary>
+        /// divGames control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divGames;
+        
+        /// <summary>
         /// divAdmin control.
         /// </summary>
         /// <remarks>
